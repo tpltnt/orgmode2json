@@ -14,6 +14,7 @@ class Orgmode2json(object):
 
     .. moduleauthor:: tpltnt
     """
+    from io import TextIOWrapper
 
     __orgmode_inputfile = None
     __json_outputfile = None
@@ -55,3 +56,19 @@ class Orgmode2json(object):
 
         __ofile = open(filename,'w')
         return __ofile
+
+
+    def parse_and_write(self, orgmodefile, jsonfile):
+        """
+        Parse the given orgmode-file and write into the given JSON file.
+
+        :param orgmodefile:
+        :type orgmodefile: io.TextIOWrapper
+        :param jsonfile:
+        :type jsonfile: io.TextIOWrapper
+        :raises: TypeError
+        """
+
+        if not isinstance(orgmodefile, TextIOWrapper):
+            raise TypeError("orgmode file of wrong type")
+        pass
