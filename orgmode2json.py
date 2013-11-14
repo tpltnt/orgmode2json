@@ -37,3 +37,21 @@ class Orgmode2json(object):
 
         __ofile = open(filename,'r')
         return __ofile
+
+
+    def open_jsonfile(self, filename):
+        """
+        Open a JSON file for reading. The file is identified by the given
+        name.
+
+        :param filename: name (path) of the file to open
+        :type filename: str
+        :returns: file object associated with the file
+        :raises: TypeError
+        """
+
+        if not isinstance(filename,str):
+            raise TypeError("given filename is not a string")
+
+        __ofile = open(filename,'w')
+        return __ofile
