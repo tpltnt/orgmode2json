@@ -71,4 +71,7 @@ class Orgmode2json(object):
 
         if not isinstance(orgmodefile, TextIOWrapper):
             raise TypeError("orgmode file of wrong type")
+        if not isinstance(jsonfile, TextIOWrapper):
+            raise TypeError("JSON file of wrong type")
+
         pass
