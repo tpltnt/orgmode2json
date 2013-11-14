@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../orgmode2json')
 import pytest
-from io import IOBase
+from io import TextIOWrapper
 from orgmode2json import *
 
 
@@ -12,7 +12,7 @@ def test_filename0():
     """
     o2j = Orgmode2json()
     ofile = o2j.open_jsonfile('tests/test.json')
-    if not isinstance(ofile, IOBase):
+    if not isinstance(ofile, TextIOWrapper):
         pytest.fail("no file object returned")
     ofile.close()
 
