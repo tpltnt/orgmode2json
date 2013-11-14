@@ -5,4 +5,4 @@ from orgmode2json import *
 
 
 def test_empty_call():
-    foo = Orgmode2json
+    foo = Orgmode2json()
