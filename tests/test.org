@@ -1,0 +1,7 @@
+this line should not be read despite the tags :tag23:
+* test level 1
+* test level 1 with tags :tag1:tag2:
+* test level 2 with one tag                                            :tag2:
+** but also level 2
+** and a second level 2 with tags :tag1:tag3:
+
