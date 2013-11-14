@@ -3,7 +3,7 @@
 """
 A pure python 3 class to parse `orgmode <http://orgmode.org/>`_ files and
 spit out `JSON <http://wwww.json.org>`_. To this point it is mostly intended
-to parse (tagged) notes.
+to parse (tagged) notes. This work is licensed under the `GNU Affero General Public License v3 <https://www.gnu.org/licenses/agpl-3.0.en.html>`_.
 
 .. moduleauthor:: tpltnt
 """
