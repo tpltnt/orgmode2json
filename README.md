@@ -22,3 +22,7 @@ FAQ
 * Are there tests supplied?
   Yes, of course. Just run `py.test` to see what causes trouble.
   Run `coverage report -m` to satisfy your OCD tendencies
+
+* Why didn't you include feature X? 
+  I most likely have other things to do. You can fork the code and send me a
+  pull request if you are desperate.
