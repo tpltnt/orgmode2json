@@ -68,6 +68,7 @@ class Orgmode2json(object):
         :type jsonfile: io.TextIOWrapper
         :raises: TypeError
         """
+        from io import TextIOWrapper
 
         if not isinstance(orgmodefile, TextIOWrapper):
             raise TypeError("orgmode file of wrong type")
