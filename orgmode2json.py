@@ -35,4 +35,5 @@ class Orgmode2json(object):
         if not isinstance(filename,str):
             raise TypeError("given filename is not a string")
 
-        pass
+        __ofile = open(filename,'r')
+        return __ofile
