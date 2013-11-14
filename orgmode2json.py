@@ -32,4 +32,7 @@ class Orgmode2json(object):
         :raises: TypeError
         """
 
+        if not isinstance(str, filename):
+            raise TypeError("given filename is not a string")
+
         pass
