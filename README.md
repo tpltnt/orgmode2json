@@ -7,7 +7,7 @@ stuff (so far).
 
 
 TODO
-====
+----
 
 * run `py.test` to see what causes trouble
 * run `coverage report -m` to satisfy your OCD tendencies
