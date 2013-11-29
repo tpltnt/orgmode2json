@@ -10,8 +10,16 @@ to parse (tagged) notes. This work is licensed under the `GNU Affero General Pub
 from io import TextIOWrapper
 import sys
 
+if 1 == len(sys.argv):
+    print("usage:",sys.argv[0],"inputfile.org (outputfile.json)")
+    print()
+    print("if no output filename is give, the input (base) filename will be used")
+    sys.exit(2)
+
+
 orgmode_inputfile = open(sys.argv[1], 'r')
-json_outputfile = open(sys.argv[2], 'w')
+if 2 == len(sys.argv):
+    json_outputfile = open(sys.argv[2], 'w')
 
 if not isinstance(orgmodefile, TextIOWrapper):
     raise TypeError("orgmode file of wrong type")
