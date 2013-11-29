@@ -62,7 +62,7 @@ rootobject['entries'] = []
 for line in orgmodefile:
     print(line.strip())
     print(determine_level(line))
-    print(extract_tags(line))
+    tags = dict({'tags':extract_tags(line)})
 
 json.dump(rootobject, jsonfile)
 
