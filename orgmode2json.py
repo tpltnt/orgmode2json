@@ -32,7 +32,9 @@ def extract_tags(line):
     """
     Extract array of tags from a given line.
     """
-    pass
+    splits = line.split(':')
+    tags = [tag for tag in splits if tag.isalnum()]
+    print(tags)
 
 
 if 1 == len(sys.argv):
@@ -58,8 +60,9 @@ rootobject['version'] = 0.1
 rootobject['entries'] = []
 
 for line in orgmodefile:
-    print(line)
+    print(line.strip())
     print(determine_level(line))
+    extract_tags(line)
 
 json.dump(rootobject, jsonfile)
 
