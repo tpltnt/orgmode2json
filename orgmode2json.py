@@ -47,5 +47,6 @@ for line in orgmodefile:
     print(line)
     print(determine_level(line))
 
+
 orgmodefile.close()
 jsonfile.close()
