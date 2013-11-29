@@ -24,7 +24,15 @@ def determine_level(line):
             level += 1
     if '*' == line[0]:
         level += 1
+
     return level
+
+
+def extract_tags(line):
+    """
+    Extract array of tags from a given line.
+    """
+    pass
 
 
 if 1 == len(sys.argv):
@@ -44,14 +52,14 @@ if not isinstance(orgmodefile, TextIOWrapper):
 if not isinstance(jsonfile, TextIOWrapper):
     raise TypeError("JSON file of wrong type")
 
-for line in orgmodefile:
-    print(line)
-    print(determine_level(line))
-
 rootobject = dict()
 rootobject['self-description'] = "orgmode dump"
 rootobject['version'] = 0.1
 rootobject['entries'] = []
+
+for line in orgmodefile:
+    print(line)
+    print(determine_level(line))
 
 json.dump(rootobject, jsonfile)
 
