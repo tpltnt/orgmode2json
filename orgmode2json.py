@@ -17,12 +17,16 @@ if 1 == len(sys.argv):
     sys.exit(2)
 
 
-orgmode_inputfile = open(sys.argv[1], 'r')
+orgmodefile = open(sys.argv[1], 'r')
+if 3 == len(sys.argv):
+    jsonfile = open(sys.argv[2], 'w')
 if 2 == len(sys.argv):
-    json_outputfile = open(sys.argv[2], 'w')
+    jsonfile = open(sys.argv[1].replace('.org','.json'), 'w')
 
 if not isinstance(orgmodefile, TextIOWrapper):
     raise TypeError("orgmode file of wrong type")
 if not isinstance(jsonfile, TextIOWrapper):
     raise TypeError("JSON file of wrong type")
 
+orgmodefile.close()
+jsonfile.close()
