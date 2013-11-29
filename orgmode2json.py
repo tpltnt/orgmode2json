@@ -34,7 +34,7 @@ def extract_tags(line):
     """
     splits = line.split(':')
     tags = [tag for tag in splits if tag.isalnum()]
-    print(tags)
+    return tags
 
 
 if 1 == len(sys.argv):
@@ -62,7 +62,7 @@ rootobject['entries'] = []
 for line in orgmodefile:
     print(line.strip())
     print(determine_level(line))
-    extract_tags(line)
+    print(extract_tags(line))
 
 json.dump(rootobject, jsonfile)
 
