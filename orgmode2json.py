@@ -10,12 +10,27 @@ to parse (tagged) notes. This work is licensed under the `GNU Affero General Pub
 from io import TextIOWrapper
 import sys
 
+
+def determine_level(line):
+    """
+    A valid level is >0
+    0 indicates notes (without stars) on the same level
+    -1 indicates an invalid line
+    """
+    level = -1
+    for char in line:
+        if '*' == char:
+            level += 1
+    if '*' == line[0]:
+        level += 1
+    return level
+
+
 if 1 == len(sys.argv):
     print("usage:",sys.argv[0],"inputfile.org (outputfile.json)")
     print()
     print("if no output filename is give, the input (base) filename will be used")
     sys.exit(2)
-
 
 orgmodefile = open(sys.argv[1], 'r')
 if 3 == len(sys.argv):
@@ -27,6 +42,10 @@ if not isinstance(orgmodefile, TextIOWrapper):
     raise TypeError("orgmode file of wrong type")
 if not isinstance(jsonfile, TextIOWrapper):
     raise TypeError("JSON file of wrong type")
+
+for line in orgmodefile:
+    print(line)
+    print(determine_level(line))
 
 orgmodefile.close()
 jsonfile.close()
