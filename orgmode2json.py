@@ -9,6 +9,7 @@ to parse (tagged) notes. This work is licensed under the `GNU Affero General Pub
 """
 from io import TextIOWrapper
 import sys
+import json
 
 
 def determine_level(line):
@@ -47,6 +48,12 @@ for line in orgmodefile:
     print(line)
     print(determine_level(line))
 
+rootobject = dict()
+rootobject['self-description'] = "orgmode dump"
+rootobject['version'] = 0.1
+rootobject['entries'] = []
+
+json.dump(rootobject, jsonfile)
 
 orgmodefile.close()
 jsonfile.close()
